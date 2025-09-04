@@ -1,0 +1,82 @@
+================================================================================
+              TAFOWEG PHARMACY SYSTEM - QUICK START GUIDE
+================================================================================
+
+SYSTEM URL: [Your Vercel URL will be here after deployment]
+
+================================================================================
+STEP 1: LOGIN
+================================================================================
+Go to the system URL and login with:
+Username: admin
+Password: admin123
+
+================================================================================
+STEP 2: QUICK TEST FLOW (5 MINUTES)
+================================================================================
+
+1. DASHBOARD
+   - You'll see today's stats and charts
+   - Note the "Low Stock" alerts (red cards)
+
+2. MAKE A SALE (Click "Sales" in sidebar)
+   - Type "Paracetamol" in search box
+   - Click "Add to Cart" 
+   - Enter quantity: 2
+   - Click "Checkout"
+   - Select "Cash" payment
+   - Click "Complete Sale"
+   - View/Download the receipt
+
+3. CHECK INVENTORY (Click "Inventory")
+   - See all drugs in stock
+   - Click "Low Stock" tab to see items below 50 units
+   - Click "Expiring Soon" tab for drugs expiring within 30 days
+
+4. VIEW REPORTS (Click "Reports")  
+   - Select "Daily" report type
+   - Click "Generate Report"
+   - See today's sales summary
+   - Click "Export to PDF"
+
+5. MANAGE USERS (Click "Users")
+   - View all system users
+   - See their roles and status
+
+================================================================================
+QUICK FEATURE TEST
+================================================================================
+
+✓ Multi-user system with 3 roles
+✓ Real-time stock management
+✓ Automatic low stock alerts
+✓ PDF receipt generation
+✓ Sales analytics & reports
+✓ Ugandan Shilling (UGX) currency
+✓ Responsive design for all devices
+
+================================================================================
+TEST WITH DIFFERENT ROLES
+================================================================================
+
+1. LOGOUT (Click user icon → Logout)
+
+2. LOGIN AS CASHIER:
+   Username: cashier
+   Password: cashier123
+   - Can make sales
+   - Cannot access Users or Settings
+
+3. LOGIN AS STOCK MANAGER:
+   Username: stockmanager  
+   Password: stock123
+   - Can manage inventory
+   - Cannot make direct sales
+
+================================================================================
+NEED HELP?
+================================================================================
+
+Check TESTING_GUIDE.txt for detailed testing instructions
+
+================================================================================

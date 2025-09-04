@@ -1,0 +1,305 @@
+================================================================================
+                    TAFOWEG PHARMACY MANAGEMENT SYSTEM
+                         CLIENT TESTING GUIDE
+                           Version 1.0.0
+================================================================================
+
+DATE: January 2025
+PREPARED FOR: Tafoweg Pharmacy Ltd.
+
+================================================================================
+1. SYSTEM ACCESS CREDENTIALS
+================================================================================
+
+Please use these test accounts to explore different user roles:
+
+ADMIN ACCOUNT (Full Access)
+Username: admin
+Password: admin123
+
+CASHIER ACCOUNT (Sales & Basic Views)
+Username: cashier
+Password: cashier123
+
+STOCK MANAGER ACCOUNT (Inventory Management)
+Username: stockmanager
+Password: stock123
+
+================================================================================
+2. TESTING CHECKLIST BY MODULE
+================================================================================
+
+--------------------------------------------------------------------------------
+A. LOGIN & AUTHENTICATION
+--------------------------------------------------------------------------------
+[ ] Test login with Admin credentials
+[ ] Test login with Cashier credentials
+[ ] Test login with Stock Manager credentials
+[ ] Test logout functionality
+[ ] Verify incorrect password shows error
+[ ] Check "Remember Me" functionality
+[ ] Verify role-based menu visibility
+
+--------------------------------------------------------------------------------
+B. DASHBOARD (All Users)
+--------------------------------------------------------------------------------
+[ ] View today's sales amount
+[ ] Check total drugs in stock
+[ ] View low stock alerts (red cards)
+[ ] View expiring drugs alerts
+[ ] Check sales chart displays correctly
+[ ] Verify quick action buttons work
+[ ] Check responsive layout on different screen sizes
+
+--------------------------------------------------------------------------------
+C. SALES MODULE (Admin & Cashier)
+--------------------------------------------------------------------------------
+[ ] Search for drugs by name
+[ ] Add drugs to cart
+[ ] Modify quantities in cart
+[ ] Remove items from cart
+[ ] Apply discount
+[ ] Process cash payment
+[ ] Process mobile money payment
+[ ] Generate and view receipt
+[ ] Check stock is deducted after sale
+[ ] View recent transactions
+[ ] Search transaction history
+
+TEST SCENARIO:
+1. Search for "Paracetamol"
+2. Add 5 units to cart
+3. Apply 10% discount
+4. Process as cash payment
+5. Generate receipt
+6. Verify stock reduced by 5
+
+--------------------------------------------------------------------------------
+D. INVENTORY MANAGEMENT (Admin & Stock Manager)
+--------------------------------------------------------------------------------
+[ ] View all drugs list
+[ ] Search drugs by name
+[ ] Filter by category
+[ ] Add new drug
+[ ] Edit existing drug details
+[ ] Delete a drug
+[ ] View low stock items (< 50 units)
+[ ] View expiring drugs (within 30 days)
+[ ] Update stock quantities
+[ ] Add supplier information
+
+TEST SCENARIO:
+1. Add new drug "Test Medicine"
+   - Category: Antibiotics
+   - Price: 5000 UGX
+   - Stock: 100
+   - Expiry: 30 days from today
+2. Edit the price to 5500 UGX
+3. View in low stock tab
+4. Delete the test drug
+
+--------------------------------------------------------------------------------
+E. REPORTS & ANALYTICS (Admin & Stock Manager)
+--------------------------------------------------------------------------------
+[ ] Generate daily sales report
+[ ] Generate weekly sales report
+[ ] Generate monthly sales report
+[ ] View inventory valuation
+[ ] Check profit margins
+[ ] Export report to PDF
+[ ] Export report to CSV
+[ ] View top-selling products
+[ ] Check expiry reports
+[ ] View stock movement report
+
+TEST DATES FOR REPORTS:
+- Daily: Today's date
+- Weekly: Last 7 days
+- Monthly: Current month
+
+--------------------------------------------------------------------------------
+F. USER MANAGEMENT (Admin Only)
+--------------------------------------------------------------------------------
+[ ] View all users
+[ ] Create new user
+[ ] Edit user details
+[ ] Change user role
+[ ] Reset user password
+[ ] Deactivate user
+[ ] Reactivate user
+[ ] Search users by name
+[ ] Filter users by role
+[ ] View user activity logs
+
+TEST SCENARIO:
+1. Create test user "testuser"
+2. Set role as Cashier
+3. Set password "test123"
+4. Save and verify in list
+5. Deactivate the user
+6. Reactivate the user
+7. Delete test user
+
+--------------------------------------------------------------------------------
+G. SETTINGS (Admin Only)
+--------------------------------------------------------------------------------
+
+COMPANY INFORMATION TAB:
+[ ] Update company name
+[ ] Update phone number
+[ ] Update email address
+[ ] Update business address
+[ ] Add TIN number
+[ ] Add company slogan
+[ ] Save changes
+
+SYSTEM PREFERENCES TAB:
+[ ] Change currency setting
+[ ] Change date format
+[ ] Toggle notifications
+[ ] Select theme (Light/Dark)
+[ ] Save preferences
+
+RECEIPT CONFIGURATION TAB:
+[ ] Toggle print logo on receipt
+[ ] Toggle print slogan
+[ ] Toggle print TIN
+[ ] Customize receipt footer text
+[ ] Preview receipt format
+
+BACKUP & RESTORE TAB (Desktop Only):
+[ ] Create manual backup
+[ ] View backup history
+[ ] Note: Web version shows appropriate message
+
+================================================================================
+3. ROLE-BASED ACCESS TESTING
+================================================================================
+
+ADMIN ROLE - Verify Access To:
+[✓] Dashboard
+[✓] Sales
+[✓] Inventory
+[✓] Reports
+[✓] Users
+[✓] Settings
+[✓] All features within each module
+
+CASHIER ROLE - Verify Access To:
+[✓] Dashboard
+[✓] Sales (Full Access)
+[✓] Inventory (View Only)
+[✓] Reports (Limited)
+[X] Users (No Access)
+[X] Settings (No Access)
+
+STOCK MANAGER ROLE - Verify Access To:
+[✓] Dashboard
+[X] Sales (No Direct Access)
+[✓] Inventory (Full Access)
+[✓] Reports (Inventory Reports)
+[X] Users (No Access)
+[X] Settings (No Access)
+
+================================================================================
+4. DATA VALIDATION TESTING
+================================================================================
+
+[ ] Try to sell more items than in stock - Should show error
+[ ] Enter negative quantities - Should be prevented
+[ ] Enter invalid email format - Should show validation error
+[ ] Enter phone without digits - Should show error
+[ ] Leave required fields empty - Should show "required" message
+[ ] Enter expired drug - Should show warning
+[ ] Process sale with empty cart - Should be prevented
+
+================================================================================
+5. RESPONSIVE DESIGN TESTING
+================================================================================
+
+[ ] Test on Desktop (1920x1080)
+[ ] Test on Laptop (1366x768)
+[ ] Test on Tablet (768x1024)
+[ ] Test sidebar collapse on smaller screens
+[ ] Check mobile menu (hamburger) on small screens
+[ ] Verify tables are scrollable on mobile
+[ ] Check all buttons are clickable on touch devices
+
+================================================================================
+6. PERFORMANCE TESTING
+================================================================================
+
+[ ] Dashboard loads within 3 seconds
+[ ] Search results appear instantly
+[ ] No lag when adding items to cart
+[ ] Reports generate within 5 seconds
+[ ] Smooth scrolling on all pages
+[ ] No freezing when switching modules
+
+================================================================================
+7. SAMPLE TEST DATA AVAILABLE
+================================================================================
+
+The system comes pre-loaded with sample data:
+
+DRUGS:
+- Paracetamol (Low Stock Alert)
+- Amoxicillin (Normal Stock)
+- Ibuprofen (Expiring Soon)
+- Aspirin (Normal)
+- Cough Syrup (Low Stock)
+- Vitamin C (Normal)
+- Omeprazole (Normal)
+- Metformin (Normal)
+
+TRANSACTIONS:
+- Sample sales from past 30 days
+- Various payment methods used
+- Different discount scenarios
+
+================================================================================
+8. KNOWN LIMITATIONS (WEB VERSION)
+================================================================================
+
+1. Backup/Restore: Not available on web version (desktop only)
+2. Printing: Depends on browser print capabilities
+3. Offline Mode: Limited offline functionality on web
+
+================================================================================
+9. REPORTING ISSUES
+================================================================================
+
+If you encounter any issues, please note:
+1. Module where issue occurred
+2. User account being used
+3. Steps to reproduce the issue
+4. Error message (if any)
+5. Screenshot (if possible)
+6. Browser/Device being used
+
+================================================================================
+10. ACCEPTANCE CRITERIA
+================================================================================
+
+The system should:
+✓ Allow successful login for all user types
+✓ Process sales transactions correctly
+✓ Update inventory in real-time
+✓ Generate accurate reports
+✓ Enforce role-based permissions
+✓ Validate all user inputs
+✓ Display responsive design on all devices
+✓ Show amounts in UGX currency
+✓ Generate PDF receipts
+✓ Track all user activities
+
+================================================================================
+                           END OF TESTING GUIDE
+================================================================================
+
+For technical support during testing:
+Contact: Development Team
+Testing Period: January 2025
+System Version: 1.0.0
+
+================================================================================
