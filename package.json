@@ -1,0 +1,11 @@
+{
+  "name": "tafoweg-pharmacy",
+  "version": "1.0.0",
+  "description": "Tafoweg Pharmacy Management System",
+  "scripts": {
+    "build": "flutter build web --release",
+    "deploy": "vercel --prod"
+  },
+  "author": "",
+  "license": "MIT"
+}
