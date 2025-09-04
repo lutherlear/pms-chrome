@@ -1,9 +1,11 @@
 import 'dart:io';
 import 'package:drift/drift.dart';
-import 'package:drift/native.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart' as p;
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:crypto/crypto.dart';
+import 'dart:convert';
+
+// Web-specific imports
+import 'database_web.dart' if (dart.library.io) 'database_native.dart';
 import 'dart:convert';
 
 part 'app_database.g.dart';
@@ -368,9 +370,5 @@ class AppDatabase extends _$AppDatabase {
 }
 
 LazyDatabase _openConnection() {
-  return LazyDatabase(() async {
-    final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(p.join(dbFolder.path, 'tafoweg_pharmacy.db'));
-    return NativeDatabase.createInBackground(file);
-  });
+  return createDatabaseExecutor('tafoweg_pharmacy') as LazyDatabase;
 }

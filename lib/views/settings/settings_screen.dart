@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:drift/drift.dart' as drift;
 import 'dart:io';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import '../../config/app_theme.dart';
 import '../../database/app_database.dart';
 import '../../services/auth_service.dart';
@@ -676,6 +677,41 @@ class _SettingsScreenState extends State<SettingsScreen> with SingleTickerProvid
   }
 
   Widget _buildBackupRestore(AppDatabase db) {
+    if (kIsWeb) {
+      return Center(
+        child: Container(
+          padding: const EdgeInsets.all(48),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                PhosphorIconsRegular.warning,
+                size: 64,
+                color: AppTheme.warning,
+              ),
+              const SizedBox(height: 24),
+              Text(
+                'Backup & Restore Not Available',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                'Database backup and restore functionality is not available in the web version.',
+                style: TextStyle(color: AppTheme.gray),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                'Please use the desktop or mobile application for backup features.',
+                style: TextStyle(color: AppTheme.gray),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+    
     return SingleChildScrollView(
       padding: const EdgeInsets.all(24),
       child: Column(

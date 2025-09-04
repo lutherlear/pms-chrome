@@ -29,8 +29,18 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>tafoweg_pharmacy</title>
+  <title>Tafoweg Pharmacy</title>
   <link rel="manifest" href="manifest.json">
+  
+  <!-- Load sql.js for Drift web support -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <script>
+    window.addEventListener('load', async function () {
+      await initSqlJs({
+        locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
+      });
+    });
+  </script>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>

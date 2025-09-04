@@ -4,6 +4,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:intl/intl.dart';
 import '../database/app_database.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class BackupService {
   final AppDatabase db;
@@ -12,6 +13,10 @@ class BackupService {
   
   /// Create a backup of the database
   Future<String> createBackup() async {
+    if (kIsWeb) {
+      throw Exception('Backup functionality is not available on web platform');
+    }
+    
     try {
       // Get the database file path
       final dbFolder = await getDatabasesPath();
@@ -56,6 +61,10 @@ class BackupService {
   
   /// Restore database from a backup file
   Future<void> restoreBackup(String backupFilePath) async {
+    if (kIsWeb) {
+      throw Exception('Restore functionality is not available on web platform');
+    }
+    
     try {
       final backupFile = File(backupFilePath);
       
@@ -107,6 +116,10 @@ class BackupService {
   
   /// Get list of available backups
   Future<List<FileInfo>> getAvailableBackups() async {
+    if (kIsWeb) {
+      return [];
+    }
+    
     try {
       Directory? backupDir;
       if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
@@ -150,6 +163,10 @@ class BackupService {
   
   /// Delete a backup file
   Future<void> deleteBackup(String backupPath) async {
+    if (kIsWeb) {
+      throw Exception('Delete functionality is not available on web platform');
+    }
+    
     try {
       final file = File(backupPath);
       if (await file.exists()) {
