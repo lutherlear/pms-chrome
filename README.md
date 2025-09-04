@@ -1,6 +1,12 @@
 # Tafoweg Pharmacy Management System
 
-A professional, cross-platform Pharmacy Management System built with Flutter & Dart for Tafoweg Pharmacy Ltd. The system runs as both a web application and Windows desktop application, providing comprehensive pharmacy management capabilities with offline-first functionality.
+A professional, cross-platform Pharmacy Management System built with Flutter & Dart for Tafoweg Pharmacy Ltd. The system runs as both a web application and Windows desktop application, providing comprehensive pharmacy management capabilities.
+
+## 🚀 Live Demo
+
+Deploy this application directly to Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/lutherlear/pms-chrome)
 
 ## 🌟 Features
 
